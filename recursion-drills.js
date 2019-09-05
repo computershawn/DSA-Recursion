@@ -73,13 +73,27 @@ console.log('\n/* -------------------------------- */\n')
 /* -------------------------------- */
 
 // Recursive Fibonacci
+// 1  2  3  4  5  6  7
+// 1, 1, 2, 3, 5, 8, 13.
 const fibonacci = (num) => {
+  if(num === 0) {
+    return 0
+  }
   if(num <= 2) {
     return 1
   }
   return fibonacci(num - 1) + fibonacci(num - 2)
 }
-console.log('The 6th Fibonacci Number is: ' + fibonacci(6)) // 13
+
+const getFibSeq = (nth) => {
+  let seq = []
+  for(let i = 1; i <= nth; i++) {
+    seq.push(fibonacci(i))
+  }
+  console.log(seq)
+}
+
+console.log('The Fibonacci Sequence for 6 is: ' + getFibSeq(6))
 console.log('\n/* -------------------------------- */\n')
 
 /* -------------------------------- */
